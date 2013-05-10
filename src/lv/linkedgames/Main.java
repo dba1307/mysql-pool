@@ -30,7 +30,9 @@ public class Main {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            poolConnect.closeConnection();
+            if (poolConnect != null){
+                poolConnect.closeConnection();
+            }
         }
     }
 
